@@ -37,7 +37,7 @@ BaseCustomer[] customers = {customer1, customer2, customer3, customer4};
 //referance types --> array, class, interface...
 
 //Polymorphism 
-//Base sınıflar inherite edildiği sınıfların referansını tutabiliyor.
+//Base sınıflar inherited edildiği sınıfların referansını tutabiliyor.
 
 foreach(BaseCustomer customer in customers)
 {
