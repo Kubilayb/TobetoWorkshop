@@ -2,24 +2,27 @@
 
 using OOP2_Examples._1_Polymorphism;
 using OOP2_Examples._2_Inheritance;
+using OOP2_Examples._2_Inheritance.Entities;
 using OOP2_Examples._3_GenericType;
+using OOP2_Examples._4_Abstract_Interface;
 using OOP2_Examples._5_Encapsulation;
 using static OOP2_Examples._1_Polymorphism.Pants;
-
-
 
 
 PolymorphismWithAbstractClass();
 PolymorphismWithVirtualOverride();
 Inheritance();
 GenericTypeExample();
-EncapsulationExample();
+AbstractExample();
+InterfaceExample();
 KapsullemeOrnegi();
 
 
-Console.WriteLine("--------------Polymorphism ve Abstract Class Örneği--------------");
 static void PolymorphismWithAbstractClass()
 {
+
+    Console.WriteLine("--------------Polymorphism ve Abstract Class Örneği--------------");
+
     TShirt tshirt = new TShirt();
     Pants pants = new Pants();
 
@@ -28,13 +31,15 @@ static void PolymorphismWithAbstractClass()
 
     tshirt.Clotes();
     pants.Clotes();
-  
+
 }
 
-Console.WriteLine("--------------Polymorphism ve Virtual Override Örneği--------------");
 
 static void PolymorphismWithVirtualOverride()
 {
+    Console.WriteLine("--------------Polymorphism ve Virtual Override Örneği--------------");
+
+
     Elma elma = new Elma();
     Kivi kivi = new Kivi();
 
@@ -42,9 +47,9 @@ static void PolymorphismWithVirtualOverride()
     kivi.DescriptionLog();
 
 }
+//---------------------------------------------------------------------------------------------------------
 
 
-Console.WriteLine("--------------Inheritance Örneği--------------");
 
 //HomeAppliances
 
@@ -55,6 +60,54 @@ Console.WriteLine("--------------Inheritance Örneği--------------");
 */
 static void Inheritance()
 {
+    Console.WriteLine("--------------Inheritance Örneği--------------");
+
+
+    IndividualCustomer customer1 = new IndividualCustomer();
+    customer1.Id = 1;
+    customer1.FirstName = "Tony";
+    customer1.LastName = "Start";
+    customer1.NationalIdentity = "124567";
+    customer1.CustomerNumber = "16579871";
+    customer1.Address = "İstanbul";
+
+    IndividualCustomer customer2 = new IndividualCustomer();
+    customer2.Id = 2;
+    customer2.FirstName = "Bruce";
+    customer2.LastName = "Wayne";
+    customer2.NationalIdentity = "1234568";
+    customer2.CustomerNumber = "4548425";
+    customer2.Address = "Ankara";
+
+    CorporateCustomer customer3 = new CorporateCustomer();
+    customer3.Id = 3;
+    customer3.Name = "Marvel";
+    customer3.TaxNumber = "123456";
+    customer3.CustomerNumber = "3456621";
+    customer3.Address = "İzmir";
+
+    CorporateCustomer customer4 = new CorporateCustomer();
+    customer4.Id = 4;
+    customer4.Name = "DC";
+    customer4.TaxNumber = "174785";
+    customer4.CustomerNumber = "5788795";
+    customer4.Address = "Konya";
+
+
+    BaseCustomer[] customers = { customer1, customer2, customer3, customer4 };
+
+    //value types -->int,bool,double...
+    //referance types --> array, class, interface...
+
+    //Polymorphism 
+    //Base sınıflar inherited edildiği sınıfların referansını tutabiliyor.
+
+    foreach (BaseCustomer customer in customers)
+    {
+        Console.WriteLine(customer.CustomerNumber);
+    }
+
+    Console.WriteLine("--------------Inheritance Örneği--------------");
 
     Television television1 = new Television();
     television1.Id = 1;
@@ -107,10 +160,14 @@ static void Inheritance()
         Console.WriteLine(washingMachines[i].Name + " " + washingMachines[i].MaxKg + " " + washingMachines[i].SpinSpeedRpm);
     }
 }
-Console.WriteLine("--------------Generic Type Örneği--------------");
 
-   static void GenericTypeExample()
+//---------------------------------------------------------------------------------------------------------
+
+static void GenericTypeExample()
 {
+    Console.WriteLine("--------------Generic Type Örneği--------------");
+
+
     Box<string> stringKutusu = new Box<string>("Merhaba Dünya");
     Box<int> tamSayiKutusu = new Box<int>(42);
 
@@ -118,40 +175,45 @@ Console.WriteLine("--------------Generic Type Örneği--------------");
     Box<int>.DisplayContent(tamSayiKutusu);
 }
 
-
-
-//----------------
-
-
-
-
-static void EncapsulationExample()
+//---------------------------------------------------------------------------------------------------------
+static void AbstractExample()
 {
-    BankAccount bankAccount = new BankAccount("Alice Smith", "123456789", 1000);
+    Console.WriteLine("--------------Abstract Örneği--------------");
 
-    Console.WriteLine($"Customer: {bankAccount.CustomerName}");
-    Console.WriteLine($"Account Number: {bankAccount.AccountNumber}");
-    Console.WriteLine($"Initial Balance: {bankAccount.Balance}");
+    // Hayvan sınıfından türetilen nesne
+    Hayvan hayvan = new Cat();
 
-    bankAccount.Deposit(500);
-    bankAccount.Withdraw(200);
-    bankAccount.Withdraw(2000); // Attempt to withdraw more than the balance
+    // Hayvanın sesini çıkarma
+    hayvan.SesYap();
 
-    Console.ReadLine();
 }
 
-static void KapsullemeOrnegi()
+
+static void InterfaceExample()
 {
-    BankaHesabi bankaHesabi = new BankaHesabi("Tony Stark", "123456789", 1000);
 
-    Console.WriteLine($"Müşteri: {bankaHesabi.MusteriAdi}");
-    Console.WriteLine($"Hesap Numarası: {bankaHesabi.HesapNumarasi}");
-    Console.WriteLine($"Başlangıç Bakiyesi: {bankaHesabi.Bakiye} TL");
+    Console.WriteLine("--------------interface Örneği--------------");
 
-    bankaHesabi.ParaYatir(500);
-    bankaHesabi.ParaCek(200);
-    bankaHesabi.ParaCek(2000); // Bakiyeden fazla çekim denemesi
+    // IHayvan arayüzünden türetilen nesne
+    IHayvan hayvan = new Kopek();
 
-    Console.ReadLine();
+    // Hayvanın sesini çıkarma
+    hayvan.SesCikar();
+
 }
+
+//---------------------------------------------------------------------------------------------------------
+    static void KapsullemeOrnegi()
+    {
+        Console.WriteLine("--------------Encapsulation Örneği--------------");
+
+        Hesap kullaniciHesabi = new Hesap("Kubilay", "sifre123");
+
+        // Kullanıcı adı ve şifresini gösterme
+        Console.WriteLine("Kullanıcı Adı: " + kullaniciHesabi.KullaniciAdi);
+        Console.WriteLine("Şifre: " + kullaniciHesabi.Sifre);
+    }
+
+
+
 

@@ -15,58 +15,21 @@ Birden fazla arayüzden uygulanabilir (gerçekleştirilebilir).
 Örnekleri oluşturulamaz ve sınıflar arasında davranışları standardize etmek için kullanılır.
 
 
-public abstract class BaseClass
-{
-    public abstract void AbstractMethod();
 
-    public void ConcreteMethod()
-    {
-        // Somut metot gövdesi
-    }
-}
+Abstract sınıflar ve interface'ler, C# gibi nesne yönelimli programlama dillerinde sıkça kullanılan iki kavramdır.
 
+Abstract Sınıflar (Abstract Classes):
 
+Abstract sınıflar, soyutlama sağlayan ve diğer sınıflar için bir şablona dönüşen sınıflardır.
+İçlerinde hem soyut (abstract) hem de somut (concrete) üyeler (metodlar, özellikler) barındırabilirler.
+Abstract sınıflardan direkt olarak nesne oluşturulamaz, genellikle türetilerek kullanılırlar.
+Bir sınıf sadece bir abstract sınıftan türeyebilir (inheritance).
+Interface'ler:
 
-public interface IInterface
-{
-    void InterfaceMethod();
-}
-
-
-// Soyut sınıf
-public abstract class Sekil
-{
-    // Soyut metot
-    public abstract void Ciz();
-}
-
-// Arayüz
-public interface IHareket
-{
-    void HareketEt();
-}
-
-// Daire sınıfı, soyut sınıfı miras alır ve arayüzü uygular
-public class Daire : Sekil, IHareket
-{
-    public override void Ciz()
-    {
-        Console.WriteLine("Daire çizildi.");
-    }
-
-    public void HareketEt()
-    {
-        Console.WriteLine("Daire hareket ediyor.");
-    }
-}
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        Daire daire = new Daire();
-        daire.Ciz();        // Soyut sınıftan gelen metot
-        daire.HareketEt();  // Arayüzden gelen metot
-    }
-}
-
+Interface'ler, sınıflar arasında bir sözleşme (contract) sağlarlar. 
+Yani bir sınıf, bir interface'i uyguladığında o interface'in tanımladığı tüm üyeleri içermek zorundadır.
+Interface'ler sadece metot, özellik ve olay bildirimi yapar, içerikleri yoktur (implementation).
+Bir sınıf birden fazla interface'i uygulayabilir (multiple interface implementation).
+Interface'ler, çoklu kalıtımı (multiple inheritance) sağlarlar.
+Özetle, abstract sınıflar bir kısmı soyut, bir kısmı somut üyelere sahip olan sınıflardır ve türetilerek kullanılırlar. 
+Interface'ler ise sadece üye bildirimlerini içeren, birden fazla sınıf tarafından uygulanabilen sözleşmelerdir.

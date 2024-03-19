@@ -20,7 +20,6 @@ namespace OOP2_Examples._3_GenericType
         }
     }
 
-
     /*
              Bu kod, Box adında bir generic sınıf tanımlar. 
              <T> yazısı, bu sınıfın generic bir tür parametresi aldığını belirtir. 
