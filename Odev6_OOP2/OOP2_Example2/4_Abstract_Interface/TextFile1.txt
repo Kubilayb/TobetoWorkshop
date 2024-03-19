@@ -1,0 +1,72 @@
+﻿
+
+Abstract class ile interface arasındaki farkı araştırınız.(ödev açıklama kısmına yazınız.)
+
+Abstract class (Soyut Sınıf):
+
+Hem tamamlanmış (implement edilmiş) hem de tamamlanmamış (implement edilmemiş) üyeler içerebilir.
+Birden fazla soyut sınıftan miras alamaz.
+Örnekleri oluşturulamaz, ancak türetilmiş sınıfların örnekleri oluşturulabilir.
+
+Interface (Arayüz):
+
+Sadece tamamlanmamış (implement edilmemiş) üyeler içerir.
+Birden fazla arayüzden uygulanabilir (gerçekleştirilebilir).
+Örnekleri oluşturulamaz ve sınıflar arasında davranışları standardize etmek için kullanılır.
+
+
+public abstract class BaseClass
+{
+    public abstract void AbstractMethod();
+
+    public void ConcreteMethod()
+    {
+        // Somut metot gövdesi
+    }
+}
+
+
+
+public interface IInterface
+{
+    void InterfaceMethod();
+}
+
+
+// Soyut sınıf
+public abstract class Sekil
+{
+    // Soyut metot
+    public abstract void Ciz();
+}
+
+// Arayüz
+public interface IHareket
+{
+    void HareketEt();
+}
+
+// Daire sınıfı, soyut sınıfı miras alır ve arayüzü uygular
+public class Daire : Sekil, IHareket
+{
+    public override void Ciz()
+    {
+        Console.WriteLine("Daire çizildi.");
+    }
+
+    public void HareketEt()
+    {
+        Console.WriteLine("Daire hareket ediyor.");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Daire daire = new Daire();
+        daire.Ciz();        // Soyut sınıftan gelen metot
+        daire.HareketEt();  // Arayüzden gelen metot
+    }
+}
+
