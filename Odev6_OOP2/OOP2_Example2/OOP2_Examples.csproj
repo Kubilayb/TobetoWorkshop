@@ -8,8 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="1_Polymorphism\" />
-    <Folder Include="3-GenericType\" />
     <Folder Include="4_Abstract_Interface\" />
   </ItemGroup>
 
