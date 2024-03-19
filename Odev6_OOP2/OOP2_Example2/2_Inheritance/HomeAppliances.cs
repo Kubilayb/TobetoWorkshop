@@ -17,7 +17,6 @@ namespace OOP2_Examples._2_Inheritance
 
         public double Price { get; set; }
 
-
     }
 
     public class Television : HomeAppliances 

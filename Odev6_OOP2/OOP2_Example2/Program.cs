@@ -9,12 +9,6 @@ using OOP2_Examples._2_Inheritance;
 
 
 
-
-
-
-
-
-
 Console.WriteLine("--------------Inheritance Örneği--------------");
 
 //HomeAppliances
