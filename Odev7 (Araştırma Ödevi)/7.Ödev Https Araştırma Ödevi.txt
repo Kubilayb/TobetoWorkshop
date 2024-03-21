@@ -1,0 +1,41 @@
+HTTP (Hypertext Transfer Protocol)
+HTTP, web tarayıcıları ve sunucular arasında bilgi alışverişini sağlayan bir iletişim protokolüdür. 
+İki temel bileşeni vardır: istemci (örneğin, bir web tarayıcısı) ve sunucu (web sayfalarını barındıran bir bilgisayar). 
+İstemci, sunucudan belirli bir kaynağı (örneğin, bir web sayfası) almak için bir istekte bulunur ve sunucu bu isteği karşılar.
+
+HTTPS (Hypertext Transfer Protocol Secure)
+	HTTPS, HTTP'nin güvenli bir sürümüdür. HTTPS, SSL (Secure Sockets Layer) veya TLS (Transport Layer Security) protokolü üzerinden veri iletişimini şifreleyerek, veri güvenliğini sağlar. 
+Bu nedenle, hassas verilerin (örneğin, kullanıcı adları, parolalar, kredi kartı bilgileri) güvenli bir şekilde iletilmesini sağlar.
+
+HTTP İstek Anatomisi
+HTTP isteği, bir istemcinin sunucuya belirli bir kaynağı almak veya işlemek için yaptığı talebi temsil eder. Bir HTTP isteği genellikle aşağıdaki bileşenlerden oluşur:
+•	Request Line (İstek Satırı): İstek türü (GET, POST vb.), Hedef URL ve HTTP sürümü.
+•	Headers (Başlıklar): İstekle ilgili ek bilgileri içerir (örneğin, kullanıcı tarayıcı bilgisi, kabul edilebilir içerik türleri).
+•	Body (Gövde): İstekle ilgili veri veya içerik. Bazı istekler bu kısmı içermez (örneğin, GET istekleri).
+
+HTTP Yanıt Anatomisi
+HTTP yanıtı, sunucunun bir istemcinin isteğine verdiği cevabı temsil eder. Bir HTTP yanıtı genellikle şu bileşenlerden oluşur:
+•	Status Line (Durum Satırı): Yanıtın durum kodu ve metni ile HTTP sürümü.
+•	Headers (Başlıklar): Yanıtla ilgili ek bilgileri içerir (örneğin, sunucu bilgisi, içerik türü).
+•	Body (Gövde): Yanıtla ilgili veri veya içerik. Bazı yanıtlar bu kısmı içermez (örneğin, 204 No Content yanıtları).
+
+HTTP İstek Yöntemleri
+HTTP istek yöntemleri, bir istemcinin sunucuya yapabileceği farklı işlemleri tanımlar. En yaygın kullanılan HTTP istek yöntemleri şunlardır:
+•	GET: Belirtilen kaynağı almak için kullanılır.
+•	POST: Belirtilen kaynağı sunucuya göndermek için kullanılır.
+•	PUT: Belirtilen kaynağı sunucuya göndermek veya güncellemek için kullanılır.
+•	DELETE: Belirtilen kaynağı sunucudan silmek için kullanılır.
+•	PATCH: Belirtilen kaynağın bir kısmını güncellemek için kullanılır.
+•	HEAD: GET isteğine benzer ancak yanıtın gövdesini almaz, sadece başlıkları alır.
+•	OPTIONS: Sunucunun desteklediği HTTP yöntemlerini almak için kullanılır.
+
+HTTP Yanıt Durum Kodları
+HTTP yanıt durum kodları, sunucunun bir istemcinin isteğine verdiği cevabın durumunu belirtir. Bazı yaygın HTTP yanıt durum kodları şunlardır:
+•	200 OK: İstek başarılı oldu ve yanıt kaynağı gönderildi.
+•	404 Not Found: İstek yapılan kaynak bulunamadı.
+•	500 Internal Server Error: Sunucuda bir hata oluştu ve istek işlenemedi.
+•	302 Found: İstenen kaynak başka bir konumda bulunuyor ve istemci bu yeni konuma yönlendirilmelidir.
+•	401 Unauthorized: İstemcinin yetkilendirme gerektiren bir kaynağa erişim izni yok.
+•	403 Forbidden: İstemcinin belirtilen kaynağa erişim izni yok veya kaynak erişime kapatıldı.
+Bu temel kavramlar, HTTP ve HTTPS protokollerinin işleyişini anlamanıza yardımcı olacaktır.
+
