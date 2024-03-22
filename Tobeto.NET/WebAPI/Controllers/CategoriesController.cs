@@ -47,7 +47,5 @@ namespace WebAPI.Controllers
             categoryService.Update(category);
         }
 
-
     }
-
 }
