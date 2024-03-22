@@ -1,5 +1,4 @@
 ﻿
-
 using OOP2_Examples._1_Polymorphism;
 using OOP2_Examples._2_Inheritance;
 using OOP2_Examples._2_Inheritance.Entities;
