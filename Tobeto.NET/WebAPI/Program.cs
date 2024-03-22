@@ -17,6 +17,7 @@ builder.Services.AddSwaggerGen();
 // Transient => Her adımda (her talepte) yeni 1 instance.
 builder.Services.AddSingleton<IProductService, ProductManager>();
 builder.Services.AddSingleton<ICategoryService, CategoryManager>();
+builder.Services.AddSingleton<ICustomerService, CustomerManager>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
