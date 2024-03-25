@@ -1,55 +1,54 @@
 ﻿using Business.Abstracts;
 using Entities;
+using DataAccess.Abstracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Business.Concretes
 {
     public class ProductManager : IProductService
     {
-        List<Product> products;
+        IProductRepository _productRepository;
 
-        public ProductManager()
+        // DI => Bu servis, servisler arasına eklendi mi?
+        public ProductManager(IProductRepository productRepository)
         {
-            this.products = new List<Product>();
+            _productRepository = productRepository;
         }
 
         public void Add(Product product)
         {
-            products.Add(product);
+            // ürün ismini kontrol et
+            // fiyatını kontrol et
+
+            if (product.UnitPrice < 0)
+                throw new Exception("Ürün fiyatı 0'dan küçük olamaz.");
+
+            _productRepository.Add(product);
         }
 
         public void Delete(int id)
         {
-            products.Remove(GetById(id));
+            throw new NotImplementedException();
         }
 
         public List<Product> GetAll()
         {
-            return this.products;
+            // Cacheleme?
+            return _productRepository.GetAll();
         }
 
         public Product GetById(int id)
         {
-            return products.FirstOrDefault(p => p.Id == id);
+            throw new NotImplementedException();
         }
-
         public void Update(Product product)
         {
-            Product existingProduct = GetById(product.Id);
-
-            if (existingProduct != null)
-            {
-                existingProduct.Name = product.Name;
-                existingProduct.UnitPrice = product.UnitPrice;
-            }
-            else
-            {
-                throw new ArgumentException("Güncellenecek bir ürün bulunamadı");
-            }
+            throw new NotImplementedException();
         }
     }
 }
