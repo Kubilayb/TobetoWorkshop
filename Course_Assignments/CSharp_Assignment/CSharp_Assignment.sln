@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2_Conditionals_SartBloklari
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_Methods", "3_Methods\3_Methods.csproj", "{789B0AA0-59F7-42F9-968D-8F8B2BC9BC12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_Arrays", "4_Arrays\4_Arrays.csproj", "{02BAB79C-CDAF-4063-9FE6-1241277B7297}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{789B0AA0-59F7-42F9-968D-8F8B2BC9BC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{789B0AA0-59F7-42F9-968D-8F8B2BC9BC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{789B0AA0-59F7-42F9-968D-8F8B2BC9BC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02BAB79C-CDAF-4063-9FE6-1241277B7297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02BAB79C-CDAF-4063-9FE6-1241277B7297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02BAB79C-CDAF-4063-9FE6-1241277B7297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02BAB79C-CDAF-4063-9FE6-1241277B7297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

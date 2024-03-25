@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleUI", "ConsoleUI\Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApplication", "MyApplication\MyApplication.csproj", "{D8F3BABF-AE32-4397-A8E4-AFAB0C590107}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{7A9D548B-D532-496F-969F-96B0224F8868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{7A9D548B-D532-496F-969F-96B0224F8868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{4CED3423-2A9C-41B2-8B7D-FB0B9DE3EBA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{4CED3423-2A9C-41B2-8B7D-FB0B9DE3EBA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{BC544352-5DC0-4146-A864-CC1C9287F39D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{BC544352-5DC0-4146-A864-CC1C9287F39D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DersIcerikleri", "DersIcerikleri", "{EA26B667-3D98-4BE1-AE7C-285C4DE681DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19EA9640-AD1C-407A-89F5-F79B2A25F726} = {EA26B667-3D98-4BE1-AE7C-285C4DE681DF}
+		{D8F3BABF-AE32-4397-A8E4-AFAB0C590107} = {EA26B667-3D98-4BE1-AE7C-285C4DE681DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1FF83067-B7DF-4294-8018-58FA6285EC23}
