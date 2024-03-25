@@ -21,25 +21,30 @@ namespace DataAccess.Concretes.InMemory
         {
             products.Add(product);
         }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Product> GetAll()
         {
             return products;
         }
-
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            // LINQ => SQL'in C# hali
+            Product? product = products.FirstOrDefault(p => p.Id == id);
+            return product;
+
+            // Product? product = products.Find(x => x.Id == id);
+            // return products.Where(p => p.Id == id).FirstOrDefault();     predicate lamda expretion
+            // return products..FirstOrDefault(p => p.Id == id);          farklı kullanımlar
+
+        }
+
+        public void Delete(Product product)
+        {
+            products.Remove(product);
         }
 
         public void Update(Product product)
         {
-            throw new NotImplementedException();
+            // InMemory olduğundan şimdilik yapmıyoruz. atladık.
         }
     }
 }
