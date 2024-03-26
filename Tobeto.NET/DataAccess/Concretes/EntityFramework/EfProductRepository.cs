@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes.EntityFramework
 {
-    internal class EfProductRepository : IProductRepository
+    public class EfProductRepository : IProductRepository
     {
         // ORM yapısı
         public void Add(Product product)
@@ -37,11 +37,12 @@ namespace DataAccess.Concretes.EntityFramework
             }
         }
 
+        
         public Product GetById(int id)
         {
             using (BaseDbContext context = new())
             {
-                return context.Products.FirstOrDefault(p => p.Id = id);
+                return context.Products.FirstOrDefault(p => p.Id == id);
                 
             }
         }

@@ -22,10 +22,9 @@ builder.Services.AddSwaggerGen();
 
 // Transient => Her adımda (her talepte) yeni 1 instance.
 builder.Services.AddSingleton<IProductService, ProductManager>();
-builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>(); // ef ekle
-// builder.Services.AddSingleton<IProductRepository, EfProductRepository>();
-
+builder.Services.AddSingleton<IProductRepository, EfProductRepository>();
 builder.Services.AddDbContext<BaseDbContext>(); //db bağlantısı
+//builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>(); // ef ekledik
 
 builder.Services.AddSingleton<ICategoryService, CategoryManager>();
 builder.Services.AddSingleton<ICustomerService, CustomerManager>();

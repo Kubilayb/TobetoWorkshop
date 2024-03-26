@@ -9,7 +9,7 @@ namespace DataAccess.Concretes.EntityFramework
         public DbSet<Product> Products { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Database=Tobeto4A; Trusted_Connection=True");
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Tobeto4A;User Id=sa;Password=YourStrongPassword123!;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
         }
     }
