@@ -40,11 +40,11 @@ namespace WebAPI.Controllers
             categoryService.Delete(id);
         }
 
-        [HttpPost("update")]
-        public void Update([FromBody] Category category)
-        {
-            categoryService.Update(category);
-        }
+        //[HttpPost("update")]
+        //public void Update([FromBody] Category category)
+        //{
+        //    categoryService.Update(category);
+        //}
 
     }
 }

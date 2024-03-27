@@ -31,13 +31,13 @@ namespace Business.Concretes
             categories.Remove(categories.Find(x => x.Id == id));
         }
 
-        public void Update(Category category)
-        {
-            Category foundCategory = categories.Find(x => x.Id == category.Id);
-            foundCategory.Name = category.Name;
-            foundCategory.Description = category.Description;
+        //public void Update(Category category)
+        //{
+        //    Category foundCategory = categories.Find(x => x.Id == category.Id);
+        //    foundCategory.Name = category.Name;
+        //    foundCategory.Description = category.Description;
 
-        }
+        //}
 
         public Category GetById(int id)
         {
