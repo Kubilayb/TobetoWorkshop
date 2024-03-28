@@ -9,17 +9,18 @@ namespace Entities
     public class Customer
 
     {
-        public Customer(int id, string firstname, string lastname, string phonenumber)
+        public Customer() { }
+
+        public Customer(int customerId, string firstName, string lastName)
         {
-            Id = id;
-            FirstName = firstname;
-            LastName = lastname;
-            PhoneNumber = phonenumber;
+            CustomerId = customerId;
+            FirstName = firstName;
+            LastName = lastName;
         }
-        public int Id { get; set; }
+
+        public int CustomerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
 
     }
 }

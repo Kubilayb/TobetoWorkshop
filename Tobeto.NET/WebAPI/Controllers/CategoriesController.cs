@@ -23,9 +23,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("id")]
-        public Category GetById(int id)
+        public Category GetById(int categoryId)
         {
-            return categoryService.GetById(id);
+            return categoryService.GetById(categoryId);
         }
 
         [HttpPost("add")]
@@ -35,9 +35,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public void Delete([FromBody] int id)
+        public void Delete([FromBody] int categoryId)
         {
-            categoryService.Delete(id);
+            categoryService.Delete(categoryId);
         }
 
         //[HttpPost("update")]

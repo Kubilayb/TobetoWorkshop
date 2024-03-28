@@ -10,11 +10,11 @@ namespace Business.Abstracts
 {
     public interface ICategoryService
     {
-        Category GetById(int id);
+        Category GetById(int categoryId);
         List<Category> GetAll();
         void Add(Category category);
        // void Update(Category category);
-        void Delete(int id);
+        void Delete(int categoryId);
 
     }
 }

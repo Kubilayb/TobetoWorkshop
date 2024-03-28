@@ -31,7 +31,7 @@ namespace Business.Concretes
             _productRepository.Add(product);
         }
 
-        public void Delete(int id)
+        public void Delete(int productId)
         {
             throw new NotImplementedException();
         }
@@ -42,7 +42,7 @@ namespace Business.Concretes
             return _productRepository.GetAll();
         }
 
-        public Product GetById(int id)
+        public Product GetById(int productId)
         {
             throw new NotImplementedException();
         }

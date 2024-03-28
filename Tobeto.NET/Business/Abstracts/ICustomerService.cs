@@ -9,10 +9,10 @@ namespace Business.Abstracts
 {
     public interface ICustomerService
     {
-        Customer GetById(int id);
+        Customer GetById(int customerId);
         List<Customer> GetAll();
         void Add(Customer customer);
         void Update(Customer customer);
-        void Delete(int id);
+        void Delete(int customerId);
     }
 }

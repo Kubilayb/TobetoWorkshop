@@ -22,9 +22,9 @@ namespace WebAPI.Controllers
         }
         [HttpGet("id")]
 
-        public Customer GetById(int id)
+        public Customer GetById(int customerId)
         {
-            return customerService.GetById(id);
+            return customerService.GetById(customerId);
         }
 
         [HttpPost("add")]
@@ -34,9 +34,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public void Delete([FromBody] int id)
+        public void Delete([FromBody] int customerId)
         {
-            customerService.Delete(id);
+            customerService.Delete(customerId);
         }
 
         [HttpPost("update")]

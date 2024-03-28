@@ -38,11 +38,11 @@ namespace DataAccess.Concretes.EntityFramework
         }
 
         
-        public Product GetById(int id)
+        public Product GetById(int productId)
         {
             using (BaseDbContext context = new())
             {
-                return context.Products.FirstOrDefault(p => p.Id == id);
+                return context.Products.FirstOrDefault(p => p.ProductId == productId);
                 
             }
         }
