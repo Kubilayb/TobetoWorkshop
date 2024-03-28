@@ -19,13 +19,26 @@ namespace DataAccess.Concretes.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().ToTable("Productss");
+            modelBuilder.Entity<Product>().ToTable("ProductS");
             modelBuilder.Entity<Product>().HasOne(i => i.Category);
 
             modelBuilder.Entity<Order>().HasMany(o => o.OrderDetails).WithOne(od => od.Order).HasForeignKey(od => od.OrderId);
 
+            modelBuilder.Entity<OrderDetail>().ToTable("OrderDetailsS");
 
-            //Product product = new Product(2,"Pantolon",250,60,3);
+            Product product = new Product(2,"Pantolon",250,60,3);
+            Product product2 = new Product(3, "Tişört", 150, 25, 4);
+
+
+            Category category = new Category(2,"Giyim");
+            Order order = new Order(1);
+            Order order2 = new Order(2);
+            Order order3 = new Order(3);
+
+
+            OrderDetail orderDetail = new OrderDetail(1,79.95, 1, 5);
+            OrderDetail orderDetail2 = new OrderDetail(2, 105.5, 3, 8);
+
 
 
 

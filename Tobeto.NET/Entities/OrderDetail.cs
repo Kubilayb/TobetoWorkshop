@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Entities
     {
         public OrderDetail() { }
 
-        public OrderDetail(int orderDetailId, int totalPrice, int quantity, int discount)
+        public OrderDetail(int orderDetailId, double totalPrice, int quantity, int discount)
         {
             OrderDetailId = orderDetailId;
             TotalPrice = totalPrice;
@@ -20,7 +21,7 @@ namespace Entities
 
         public int OrderDetailId { get; set; }
 
-        public int TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
 
         public int Quantity { get; set; }
 
