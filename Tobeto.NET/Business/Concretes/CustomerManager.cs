@@ -27,22 +27,22 @@ namespace Business.Concretes
             customers.Add(customer);
         }
 
-        public void Delete(int customerId)
+        public void Delete(int id)
         {
-            customers.Remove(customers.Find(c => c.CustomerId == customerId));
+            customers.Remove(customers.Find(c => c.Id == id));
         }
 
         public void Update(Customer customer)
         {
-            Customer showCustomer = customers.Find(c => c.CustomerId == customer.CustomerId);
+            Customer showCustomer = customers.Find(c => c.Id == customer.Id);
             showCustomer.FirstName = customer.FirstName;
             showCustomer.LastName = customer.LastName;
             
         }
 
-        public Customer GetById(int customerId)
+        public Customer GetById(int id)
         {
-            return customers.Find(c => c.CustomerId == customerId);
+            return customers.Find(c => c.Id == id);
         }
     }
 }

@@ -25,10 +25,10 @@ namespace DataAccess.Concretes.InMemory
         {
             return products;
         }
-        public Product GetById(int productId)
+        public Product GetById(int id)
         {
             // LINQ => SQL'in C# hali
-            Product? product = products.FirstOrDefault(p => p.ProductId == productId);
+            Product? product = products.FirstOrDefault(p => p.Id == id);
             return product;
 
             // Product? product = products.Find(x => x.Id == id);

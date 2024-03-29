@@ -12,14 +12,14 @@ namespace Entities
         {
         }
 
-        public Category(int categoryId, string categoryName)
+        public Category(int id, string name)
         {
-            CategoryId = categoryId;
-            CategoryName = categoryName;
+            Id = id;
+            Name = name;
         }
 
-        public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
         public virtual ICollection<Product> products { get; set; }  
     }

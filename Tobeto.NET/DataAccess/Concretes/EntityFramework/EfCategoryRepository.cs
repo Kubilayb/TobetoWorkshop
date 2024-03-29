@@ -8,50 +8,48 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes.EntityFramework
 {
-    public class EfProductRepository : IProductRepository
+    // Her veri için 3'er seed data, ve configurasyonlar.
+    public class EfCategoryRepository : ICategoryRepository
     {
-        // ORM yapısı
-        public void Add(Product product)
-        {
-            using (BaseDbContext context = new())   // using bloğu ya da scope u tıpkı liste gibi kullandık
-            {
-                context.Products.Add(product);
-                context.SaveChanges();
-            }   // Dispose
-        }
-
-        public void Delete(Product product)
+        public void Add(Category category)
         {
             using (BaseDbContext context = new())
             {
-                context.Products.Remove(product);
+                context.Categories.Add(category);
                 context.SaveChanges();
             }
         }
 
-        public List<Product> GetAll()
+        public void Delete(Category category)
         {
             using (BaseDbContext context = new())
             {
-                return context.Products.ToList();
+                context.Categories.Remove(category);
+                context.SaveChanges();
             }
         }
 
-        
-        public Product GetById(int id)
+        public List<Category> GetAll()
         {
             using (BaseDbContext context = new())
             {
-                return context.Products.FirstOrDefault(p => p.Id == id);
-                
+                return context.Categories.ToList();
             }
         }
 
-        public void Update(Product product)
+        public Category GetById(int id)
         {
             using (BaseDbContext context = new())
             {
-                context.Products.Remove(product);
+                return context.Categories.FirstOrDefault(p => p.Id == id);
+            }
+        }
+
+        public void Update(Category category)
+        {
+            using (BaseDbContext context = new())
+            {
+                context.Categories.Update(category);
                 context.SaveChanges();
             }
         }

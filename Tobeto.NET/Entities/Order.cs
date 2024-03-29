@@ -10,14 +10,14 @@ namespace Entities
     {
         public Order() { }
 
-        public Order(int orderId)
+        public Order(int id)
         {
-            OrderId = orderId;
+            Id = id;
         }
 
-        public int OrderId { get; set; }
+        public int Id { get; set; }
 
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+       // public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 
     }
 }

@@ -11,26 +11,26 @@ namespace Entities
     {
         public OrderDetail() { }
 
-        public OrderDetail(int orderDetailId, double totalPrice, int quantity, int discount)
+        public OrderDetail(int id, double totalPrice, int quantity, int discount)
         {
-            OrderDetailId = orderDetailId;
+            Id = id;
             TotalPrice = totalPrice;
             Quantity = quantity;
             Discount = discount;
         }
 
-        public int OrderDetailId { get; set; }
+        public int Id { get; set; }
 
         public double TotalPrice { get; set; }
 
         public int Quantity { get; set; }
 
         public int Discount { get; set; }
-
+        /*
         public virtual Product Product { get; set; }
         public int ProductId { get; set; }
 
         public virtual Order Order { get; set; }
-        public int OrderId { get; set; }
+        public int OrderId { get; set; }  */
     }
 }

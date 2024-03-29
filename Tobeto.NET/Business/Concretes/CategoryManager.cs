@@ -26,9 +26,9 @@ namespace Business.Concretes
             categories.Add(category);
         }
 
-        public void Delete(int categoryId)
+        public void Delete(int id)
         {
-            categories.Remove(categories.Find(x => x.CategoryId == categoryId));
+            categories.Remove(categories.Find(x => x.Id == id));
         }
 
         //public void Update(Category category)
@@ -39,9 +39,9 @@ namespace Business.Concretes
 
         //}
 
-        public Category GetById(int categoryId)
+        public Category GetById(int id)
         {
-            return categories.Find(x => x.CategoryId == categoryId);
+            return categories.Find(x => x.Id == id);
         }
     }
 }

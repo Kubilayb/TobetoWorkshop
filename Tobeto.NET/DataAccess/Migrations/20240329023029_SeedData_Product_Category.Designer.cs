@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240327105149_Initial")]
-    partial class Initial
+    [Migration("20240329023029_SeedData_Product_Category")]
+    partial class SeedData_Product_Category
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,18 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Giyim"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Elektronik"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Product", b =>
@@ -54,7 +66,9 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("Name");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -66,7 +80,17 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Name = "Kazak",
+                            Stock = 50,
+                            UnitPrice = 500.0
+                        });
                 });
 
             modelBuilder.Entity("Entities.Product", b =>
