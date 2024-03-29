@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class OrderDetail
+    public class OrderDetail : Entity
     {
         public OrderDetail() { }
 

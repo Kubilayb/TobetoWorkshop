@@ -21,8 +21,12 @@ builder.Services.AddSwaggerGen();
 // Scoped => (API isteği) İstek başına 1 instance oluşturur.
 
 // Transient => Her adımda (her talepte) yeni 1 instance.
-builder.Services.AddSingleton<IProductService, ProductManager>();
-builder.Services.AddSingleton<IProductRepository, EfProductRepository>();
+//       builder.Services.AddSingleton<IProductService, ProductManager>();
+//       builder.Services.AddSingleton<IProductRepository, EfProductRepository>();
+
+builder.Services.AddScoped<IProductService, ProductManager>();
+builder.Services.AddScoped<IProductRepository, EfProductRepository>();
+
 builder.Services.AddDbContext<BaseDbContext>(); //db bağlantısı
 //builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>(); // ef ekledik
 

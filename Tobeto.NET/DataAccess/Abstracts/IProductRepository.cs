@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Core.DataAccess;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,9 @@ using System.Threading.Tasks;
 namespace DataAccess.Abstracts
 {
     //repositories java daki ismi
-
-    public interface IProductRepository
+    public interface IProductRepository : IRepository<Product>
     {
-        Product GetById(int id);
-        List<Product> GetAll();
-        void Add(Product product);
-        void Update(Product product);
-        void Delete(Product product);
 
     }
+
 }
