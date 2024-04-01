@@ -24,9 +24,18 @@ namespace Business.Concretes
         {
             // ürün ismini kontrol et
             // fiyatını kontrol et
-
             if (product.UnitPrice < 0)
                 throw new Exception("Ürün fiyatı 0'dan küçük olamaz.");
+
+            // Aynı isimde 2. ürün eklenemez.
+
+            Product? productWithSameName = _productRepository.Get(p => p.Name == product.Name);
+            if (productWithSameName is not null)
+                throw new Exception("Aynı isimde 2. ürün eklenemez.");
+
+            // İş kuralları, Validaton => Daha temiz yazarız?
+            // Global Ex. Handling.
+            // Pipeline Mediator pattern ??
 
             _productRepository.Add(product);
         }

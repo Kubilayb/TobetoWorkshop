@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,17 +40,32 @@ namespace Core.DataAccess
 
         }
 
-        public List<TEntity> GetAll()
+        // Filter ✅
+        // OrderBy ?
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>>? predicate)
         {
-            return Context.Set<TEntity>().ToList();
+            IQueryable<TEntity> data = Context.Set<TEntity>();
+
+            if (predicate != null)
+                data = data.Where(predicate);
+
+            return data.ToList();
 
         }
 
-        public TEntity GetById(int id)
+        //public TEntity GetById(int id)
+        //{
+        //    return Context.Set<TEntity>().FirstOrDefault(i => i.Id == id);
+        //}
+
+        // Filter ✅
+        // OrderBy ?
+        public TEntity? Get(Expression<Func<TEntity, bool>> predicate)
         {
-            return Context.Set<TEntity>().FirstOrDefault(i => i.Id == id);
+            IQueryable<TEntity> data = Context.Set<TEntity>();
+
+            return data.FirstOrDefault(predicate);
         }
 
-        
     }
 }
