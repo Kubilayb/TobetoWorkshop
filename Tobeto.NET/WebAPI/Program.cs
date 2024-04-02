@@ -2,7 +2,6 @@
 using Business.Concretes;
 using DataAccess.Abstracts;
 using DataAccess.Concretes.EntityFramework;
-using DataAccess.Concretes.InMemory;
 
 var builder = WebApplication.CreateBuilder(args);
 

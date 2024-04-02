@@ -14,7 +14,8 @@ namespace Core.DataAccess
         // List<T> GetAll();
 
         T? Get(Expression<Func<T, bool>> predicate);
-        List<T> GetList(Expression<Func<T, bool>>? predicate);
+      //  List<T> GetList(Expression<Func<T, bool>>? predicate);
+        List<T> GetList(Expression<Func<T, bool>>? predicate = null);
 
         void Add(T entity);
         void Update(T entity);

@@ -20,15 +20,34 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public List<Product> GetAll()
+
+        // public List<Product> GetAll()
+        public async Task<List<Product>> GetAll()
+
         {
-            return _productService.GetAll();
+            return await _productService.GetAll();
+
+         //   return _productService.GetAll();
         }
 
         [HttpPost]
         public void Add([FromBody] Product product)
         {
             _productService.Add(product);
+        }
+
+        [HttpGet("Senkron")]
+        public string Sync()
+        {
+            Thread.Sleep(5000);  // 5 saniye beklet
+            return "Sync endpoint";
+        }
+
+        [HttpGet("Asenkron")]
+        public async Task<string> Async()
+        {
+            await Task.Delay(5000);  // 5 saniye gecikme  await=> bekle dedik
+            return "Async endpoint";
         }
     }
 }

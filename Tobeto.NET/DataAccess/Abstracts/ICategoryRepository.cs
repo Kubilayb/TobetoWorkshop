@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
-    public interface ICategoryRepository : IRepository<Category>
+    // public interface ICategoryRepository : IRepository<Category>
+    public interface ICategoryRepository : IRepository<Category>, IAsyncRepository<Category>
+
     {
 
     }

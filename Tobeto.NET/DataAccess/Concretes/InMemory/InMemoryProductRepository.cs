@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes.InMemory
 {
+    /*
     public class InMemoryProductRepository : IProductRepository
     {
         List<Product> products;
@@ -46,5 +47,5 @@ namespace DataAccess.Concretes.InMemory
         {
             // InMemory olduğundan şimdilik yapmıyoruz. atladık.
         }
-    }
+    } */
 }
