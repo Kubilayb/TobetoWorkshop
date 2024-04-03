@@ -25,6 +25,8 @@ namespace Core.CrossCuttingConcerns.Exceptions
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
 
+                // HER CLASS KENDİ HATA YÖNETİMİNİ KENDİ İÇİNDE YAPSIN.
+
                 if (exception is BusinessException)
                 {
                     ProblemDetails problemDetails = new ProblemDetails();
@@ -36,8 +38,8 @@ namespace Core.CrossCuttingConcerns.Exceptions
                 else
                 {
                     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-
                 }
+
             }
         }
     }

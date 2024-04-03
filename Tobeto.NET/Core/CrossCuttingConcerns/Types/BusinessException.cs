@@ -8,7 +8,7 @@ namespace Core.CrossCuttingConcerns.Types
 {
     public class BusinessException : Exception
     {
-        public BusinessException(string errorCode, string message = "") : base(message)
+        public BusinessException(string errorCode, string message = "Hata Yaptınız!!!") : base(message)
         {
             ErrorCode = errorCode;
         }

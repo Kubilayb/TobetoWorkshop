@@ -48,12 +48,13 @@ if (app.Environment.IsDevelopment())
 
 //app.ConfigureExceptionMiddlewareExtensions();
 
+
+app.ConfigureExceptionMiddlewareExtensions();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.UseMiddleware<ExceptionMiddleware>();
 
 app.Run();
