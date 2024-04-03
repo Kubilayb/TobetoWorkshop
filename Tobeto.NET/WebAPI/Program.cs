@@ -1,7 +1,10 @@
 ﻿using Business.Abstracts;
 using Business.Concretes;
+using Core.CrossCuttingConcerns.Exceptions;
 using DataAccess.Abstracts;
 using DataAccess.Concretes.EntityFramework;
+using Core.CrossCuttingConcerns.Exceptions.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +34,9 @@ builder.Services.AddDbContext<BaseDbContext>(); //db bağlantısı
 
 builder.Services.AddSingleton<ICategoryService, CategoryManager>();
 builder.Services.AddSingleton<ICustomerService, CustomerManager>();
+
+// Middleware
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,10 +46,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//app.ConfigureExceptionMiddlewareExtensions();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.Run();
