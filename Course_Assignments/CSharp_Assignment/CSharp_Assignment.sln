@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfacesDemo", "Interface
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inheritance_Kalitim", "Inheritance_Kalitim\Inheritance_Kalitim.csproj", "{A5ABBA07-9709-41EA-93E8-A44EFFCDEC71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceTypes", "ReferenceTypes\ReferenceTypes.csproj", "{20AE6FBD-5611-48FC-B0C6-9650A80AF3AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReferenceTypes", "ReferenceTypes\ReferenceTypes.csproj", "{20AE6FBD-5611-48FC-B0C6-9650A80AF3AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructor", "Constructor\Constructor.csproj", "{0C984648-8A9C-4795-865F-1D5DA9B51AFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{20AE6FBD-5611-48FC-B0C6-9650A80AF3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20AE6FBD-5611-48FC-B0C6-9650A80AF3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20AE6FBD-5611-48FC-B0C6-9650A80AF3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C984648-8A9C-4795-865F-1D5DA9B51AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C984648-8A9C-4795-865F-1D5DA9B51AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C984648-8A9C-4795-865F-1D5DA9B51AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C984648-8A9C-4795-865F-1D5DA9B51AFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
