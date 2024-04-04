@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.CrossCuttingConcerns.Types;
+using AutoMapper;
 
 
 namespace Business.Concretes
@@ -14,6 +15,7 @@ namespace Business.Concretes
     public class ProductManager : IProductService
     {
         IProductRepository _productRepository;
+        IMapper mapper;
 
         // DI => Bu servis, servisler arasına eklendi mi?
         public ProductManager(IProductRepository productRepository)

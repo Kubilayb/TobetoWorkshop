@@ -4,6 +4,7 @@ using Core.CrossCuttingConcerns.Exceptions;
 using DataAccess.Abstracts;
 using DataAccess.Concretes.EntityFramework;
 using Core.CrossCuttingConcerns.Exceptions.Extensions;
+using System.Reflection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,9 @@ builder.Services.AddScoped<IProductRepository, EfProductRepository>();
 
 builder.Services.AddDbContext<BaseDbContext>(); //db bağlantısı
 //builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>(); // ef ekledik
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+//Assembly
 
 builder.Services.AddSingleton<ICategoryService, CategoryManager>();
 builder.Services.AddSingleton<ICustomerService, CustomerManager>();
