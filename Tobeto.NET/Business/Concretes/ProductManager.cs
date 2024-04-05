@@ -10,14 +10,18 @@ using AutoMapper;
 using Business.Abstracts;
 using Business.Dtos.Product;
 using Core.CrossCuttingConcerns.Types;
+using Business.Dtos.Product.Requests;
+using Business.Dtos.Product.Responses;
+using Business.Dtos.Product.Responses;
 
 
 namespace Business.Concretes
 {
     public class ProductManager : IProductService
     {
-        IProductRepository _productRepository;
-        IMapper _mapper;
+        private readonly IProductRepository _productRepository;
+        private readonly IMapper _mapper;
+
 
         // DI => Bu servis, servisler arasına eklendi mi?
         public ProductManager(IProductRepository productRepository, IMapper mapper)
@@ -29,10 +33,14 @@ namespace Business.Concretes
         // DTO => Data Transfer Object
 
 
+       
+
+        //public async Task Add(ProductForAddDto dto)
+
+        // Request-Response Pattern
+        public async Task Add(AddProductRequest dto)
         // public void Add(Product product)
         // public async void Add(Product product)
-
-        public async Task Add(ProductForAddDto dto)
         {
             // ürün ismini kontrol et
             // fiyatını kontrol et
@@ -84,7 +92,9 @@ namespace Business.Concretes
         }
 
         // public List<Product> GetAll()
-        public async Task<List<ProductForListingDto>> GetAll()
+        // public async Task<List<ProductForListingDto>> GetAll()
+
+        public async Task<List<ListProductResponse>> GetAll()
 
         {
             // Cacheleme?
@@ -92,35 +102,34 @@ namespace Business.Concretes
             // return await _productRepository.GetListAsync();
 
             List<Product> products = await _productRepository.GetListAsync();
-
-
-            //List<ProductForListingDto> response = new List<ProductForListingDto>();
-
-            //foreach (Product product in products)
-            //{
-            //    ProductForListingDto dto = new();
-            //    dto.Name = product.Name;
-            //    dto.UnitPrice = product.UnitPrice;
-            //    dto.Id = product.Id;
-            //    response.Add(dto);  
-            //}
-
-            // Manual Mapping
-            // AutoMapping
-            /* List<ProductForListingDto> response = products.Select(p => new ProductForListingDto()
-            {
-                Id = p.Id,
-                Name = p.Name,
-                UnitPrice = p.UnitPrice,
-            }).ToList();
-            */
-
-            List<ProductForListingDto> response = _mapper.Map<List<ProductForListingDto>>(products);
-
-
+            List<ListProductResponse> response = _mapper.Map<List<ListProductResponse>>(products);
             return response;
-
         }
+        //List<ProductForListingDto> response = new List<ProductForListingDto>();
+
+        //foreach (Product product in products)
+        //{
+        //    ProductForListingDto dto = new();
+        //    dto.Name = product.Name;
+        //    dto.UnitPrice = product.UnitPrice;
+        //    dto.Id = product.Id;
+        //    response.Add(dto);  
+        //}
+
+        // Manual Mapping
+        // AutoMapping
+        /* List<ProductForListingDto> response = products.Select(p => new ProductForListingDto()
+        {
+            Id = p.Id,
+            Name = p.Name,
+            UnitPrice = p.UnitPrice,
+        }).ToList();
+        */
+
+        // List<ProductForListingDto> response = _mapper.Map<List<ProductForListingDto>>(products);
+
+
+
 
         public Product GetById(int id)
         {

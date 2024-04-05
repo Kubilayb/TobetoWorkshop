@@ -1,6 +1,7 @@
 ﻿using Core.CrossCuttingConcerns.Exceptions.HttpProblemDetails;
 using Core.CrossCuttingConcerns.Types;
 using Microsoft.AspNetCore.Http;
+using System;
 using System.Text.Json;
 
 namespace Core.CrossCuttingConcerns.Exceptions
@@ -18,7 +19,7 @@ namespace Core.CrossCuttingConcerns.Exceptions
         {
             try
             {
-                await _next(context);
+                await _next(context); // herhangi bir işlem
             }
             catch (Exception exception)
             {
@@ -35,9 +36,17 @@ namespace Core.CrossCuttingConcerns.Exceptions
                     problemDetails.Type = "BusinessException";
                     await context.Response.WriteAsync(JsonSerializer.Serialize(problemDetails));
                 }
+
+                else if (exception is ValidationException)
+                {
+
+                }
+
                 else
                 {
                     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    await context.Response.WriteAsync("Bilinmedik Hata");
+
                 }
 
             }
