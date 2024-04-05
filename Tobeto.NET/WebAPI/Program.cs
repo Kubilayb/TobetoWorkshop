@@ -5,7 +5,8 @@ using DataAccess.Abstracts;
 using DataAccess.Concretes.EntityFramework;
 using Core.CrossCuttingConcerns.Exceptions.Extensions;
 using System.Reflection;
-
+using Business;
+using DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,14 +28,17 @@ builder.Services.AddSwaggerGen();
 //       builder.Services.AddSingleton<IProductService, ProductManager>();
 //       builder.Services.AddSingleton<IProductRepository, EfProductRepository>();
 
-builder.Services.AddScoped<IProductService, ProductManager>();
-builder.Services.AddScoped<IProductRepository, EfProductRepository>();
+//  builder.Services.AddScoped<IProductService, ProductManager>();
+//  builder.Services.AddScoped<IProductRepository, EfProductRepository>();
 
-builder.Services.AddDbContext<BaseDbContext>(); //db bağlantısı
-//builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>(); // ef ekledik
+//  builder.Services.AddDbContext<BaseDbContext>(); //db bağlantısı
+//  builder.Services.AddSingleton<IProductRepository, InMemoryProductRepository>(); // ef ekledik
 
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-//Assembly
+builder.Services.AddBusinessServices();
+builder.Services.AddDataAccessServices();
+
+// Assembly
+
 
 builder.Services.AddSingleton<ICategoryService, CategoryManager>();
 builder.Services.AddSingleton<ICustomerService, CustomerManager>();
