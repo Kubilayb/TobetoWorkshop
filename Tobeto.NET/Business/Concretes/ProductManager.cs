@@ -90,7 +90,10 @@ namespace Business.Concretes
             // Cacheleme?
             //  return _productRepository.GetList();
             // return await _productRepository.GetListAsync();
+
             List<Product> products = await _productRepository.GetListAsync();
+
+
             //List<ProductForListingDto> response = new List<ProductForListingDto>();
 
             //foreach (Product product in products)
@@ -104,12 +107,16 @@ namespace Business.Concretes
 
             // Manual Mapping
             // AutoMapping
-            List<ProductForListingDto> response = products.Select(p => new ProductForListingDto()
+            /* List<ProductForListingDto> response = products.Select(p => new ProductForListingDto()
             {
                 Id = p.Id,
                 Name = p.Name,
                 UnitPrice = p.UnitPrice,
             }).ToList();
+            */
+
+            List<ProductForListingDto> response = _mapper.Map<List<ProductForListingDto>>(products);
+
 
             return response;
 
