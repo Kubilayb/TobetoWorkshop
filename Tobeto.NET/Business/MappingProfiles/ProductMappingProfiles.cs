@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Business.Dtos.Product.Requests;
-using Business.Dtos.Product.Response;
+using Business.Dtos.Product.Responses;
 using Entities;
 using System;
 using System.Collections.Generic;
