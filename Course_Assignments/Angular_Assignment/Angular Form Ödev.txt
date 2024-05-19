@@ -1,0 +1,11 @@
+- Kategori tablo görünümünde listeleme componenti oluşturunuz.
+- Kategorinin açıklama alanlarını da listede yazdınız.
+- Kategorileri listelediğimiz alanda her bir kategori için bir düzenle butonu bulunmalıdır.
+- Düzenle butonuna tıklandığında ilgili kategorinin düzenlenebildiği sayfaya yönlendirilmelidir.
+- Güncellenmek istenen kategorinin özellikleri ilgili formda başlangıç değeri olarak yazılmalıdır.
+- Submit butonuna basıldığında ilgili id'e göre update işlemini gerçekleştirmelidir.
+- Delete butonuna basıldığında ek onay sonrasında silme işlemi gerçekleştirilmelidir.
+- Güncelleme işlemi tamamlandığında, kategorilerin tablo olarak listelendiği sayfaya geri yönlendirilmelidir.
+- Aynı işlemleri ürünler için de uygulayınız.
+
+Kendi pairiniz ile ödevi gerçekleştiriniz.

@@ -1,0 +1,15 @@
+JavaScript ve TypeScript'in Tarihçesi: JS ve TS'in nasıl ortaya çıktığı, gelişim süreçleri ve temel farkları üzerine bir araştırma yapabilirsiniz. Brendan Eich'in JavaScript'i geliştirmesi ve Microsoft'un TypeScript'i geliştirmesi gibi anahtar olayları inceleyebilirsiniz.
+
+Temel Sözdizimi Karşılaştırması: JavaScript ve TypeScript'in temel sözdizimlerini karşılaştıran bir çalışma yapabilirsiniz. Değişken tanımlama, fonksiyon tanımlama, dizi ve nesne kullanımı gibi konuları ele alarak farklılıkları vurgulayabilirsiniz.
+
+Veri Türleri ve Tür Güvenliği: JavaScript'in dinamik tip sistemiyle TypeScript'in statik tip sistemi arasındaki farkları inceleyebilirsiniz. Tür güvenliğinin önemi, avantajları ve dezavantajları hakkında bilgi toplayabilirsiniz.
+
+Modern JavaScript ve TypeScript Kullanımı: ES6'dan başlayarak modern JavaScript ve TypeScript özelliklerini araştırabilirsiniz. Arrow fonksiyonlar, spread operatörü, sınıflar, modüller gibi konuları ele alabilir ve bu özelliklerin kod yazımını nasıl kolaylaştırdığını gösterebilirsiniz.
+
+JavaScript ve TypeScript ile Web Geliştirme: JS ve TS'in web geliştirme alanındaki kullanımını inceleyebilirsiniz. Örneğin, React, Angular veya Vue.js gibi popüler JavaScript çerçevelerini ve bunların TypeScript desteğini araştırabilirsiniz. Ayrıca Node.js'in JavaScript ve TypeScript ile nasıl kullanılabileceğini de inceleyebilirsiniz.
+
+Hata Ayıklama ve Performans İyileştirmesi: JavaScript ve TypeScript kodlarını hata ayıklama ve performans iyileştirmesi açısından karşılaştırabilirsiniz. Geliştirme araçları, hata ayıklama teknikleri ve performans profilleme araçları hakkında bilgi toplayabilirsiniz.
+
+JS ve TS Toplulukları ve Kaynakları: JavaScript ve TypeScript topluluklarını ve çevrimiçi kaynaklarını inceleyerek, başlangıç ​​seviyesinden ileri seviyeye kadar olan eğitim ve öğrenme kaynaklarını derleyebilirsiniz. Bu kaynaklar, kitaplar, çevrimiçi dersler, bloglar, forumlar ve video içerikleri olabilir.
+
+Araştırma sonucunda aldığınız notları bizimle paylaşınız.
